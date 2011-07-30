@@ -1,6 +1,6 @@
 My configuration for vim editor.
 
---------------
+----------------------------
 Instalation
 
 Linux: simply create following symlinks in your home directory:
@@ -10,8 +10,8 @@ Linux: simply create following symlinks in your home directory:
 Windows:
     use script winupdate.py.
 
---------------
-Plugins
+----------------------------
+Installed Plugins
 
 1. Snipmate
 
@@ -23,3 +23,13 @@ Homepage: http://www.vim.org/scripts/script.php?script_id=2540
 
 Version: 1.0.1
 Homepage: http://www.vim.org/scripts/script.php?script_id=2607
+
+3. Pyflakes.vim
+
+Version: 3.01 
+Homepage: http://www.vim.org/scripts/script.php?script_id=2441
+
+----------------------------
+Other interesting plugins:
+
+1. TagList
