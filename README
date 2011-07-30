@@ -1,8 +1,25 @@
 My configuration for vim editor.
 
 --------------
+Instalation
+
+Linux: simply create following symlinks in your home directory:
+    ~/.vimrc -> vimrc
+    ~/.vim   -> vimfiles
+
+Windows:
+    use script winupdate.py.
+
+--------------
 Plugins
 
 1. Snipmate
 
 Version: https://github.com/msanders/snipmate.vim/commit/f5a75d075d3c005ebe69e3f5e56cf99516e8aa3b
+Homepage: http://www.vim.org/scripts/script.php?script_id=2540
+
+
+2. TaskList
+
+Version: 1.0.1
+Homepage: http://www.vim.org/scripts/script.php?script_id=2607
