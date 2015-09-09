@@ -1,0 +1,3 @@
+.idea
+vimfiles/.netrwhist
+vimfiles/ftplugin/python/pyflakes/pyflakes/*.pyc
