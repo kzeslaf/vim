@@ -12,6 +12,7 @@ Additional commands when inside working copy:
 Commands outside working copy:
     - info
     - update
+    - freeze
 
 TODO:
     - make the script work for python3
@@ -20,6 +21,8 @@ TODO:
     - dodać polecenie 'stat'
 """
 
+# TODO: ...
+import pysvn
 
 import os
 import subprocess
@@ -53,6 +56,19 @@ def list_working_copies(path):
             result.append(i)
 
     return result
+
+
+def svn_freeze(path_list):
+    """..."""
+    client = pysvn.Client()
+    result = []
+
+    for i in path_list:
+        info = client.info(i)
+        result.append([i, info.url, info.revision])
+
+    for i in sorted(result):
+        print(i)
 
 
 def svn_info(path_list):
@@ -90,14 +106,22 @@ def main():
     #
     #
     #
+    functions = [
+        (['info'], svn_info),
+        (['up', 'update'], svn_update),
+        (['freeze'], svn_freeze),
+        ]
+
+    #
+    #
+    #
     wc_list = sorted(list_working_copies(cwd))
 
-    if sys.argv[1] == 'info':
-        return svn_info(wc_list)
-    elif sys.argv[1] in ['up', 'update']:
-        return svn_update(wc_list)
-    else:
-        raise Exception('Unknown command: {}'.format(sys.argv[1]))
+    for i in functions:
+        if sys.argv[1] in i[0]:
+            return i[1](wc_list)
+
+    raise Exception('Unknown command: {}'.format(sys.argv[1:]))
 
 
 #######################
