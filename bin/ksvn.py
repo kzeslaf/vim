@@ -81,6 +81,28 @@ def svn_info(path_list):
     return 0
 
 
+def svn_status(path_list):
+    """..."""
+    sk = pysvn.wc_status_kind
+    ok_states = [sk.unversioned, sk.normal, sk.ignored]
+
+    client = pysvn.Client()
+
+    for i in path_list:
+
+        dirty = False
+        status = client.status(i)
+
+        for j in status:
+            if j.text_status not in ok_states:
+                dirty = True
+
+        if dirty: print(i, 'Dirty')
+        else: print(i, 'Clean')
+
+    return 0
+
+
 def svn_update(path_list):
     """..."""
     for i in path_list:
@@ -108,6 +130,7 @@ def main():
     #
     functions = [
         (['info'], svn_info),
+        (['stat', 'status'], svn_status),
         (['up', 'update'], svn_update),
         (['freeze'], svn_freeze),
         ]
