@@ -23,6 +23,7 @@ TODO:
 
 # TODO: ...
 import pysvn
+import termcolor
 
 import os
 import subprocess
@@ -96,9 +97,9 @@ def svn_status(path_list):
         for j in status:
             if j.text_status not in ok_states:
                 dirty = True
+                break
 
-        if dirty: print(i, 'Dirty')
-        else: print(i, 'Clean')
+        print('{} {}'.format(i, termcolor.colored('Dirty', 'red') if dirty else 'Clean'))
 
     return 0
 
