@@ -78,7 +78,7 @@ def svn_info(path_list):
         output = subprocess.check_output(['svn', 'info', '{}'.format(i)])
         for line in output.split('\n'):
             if line.startswith('Relative URL'):
-                print('[{}] {}'.format(i, line))
+                print('[{}] {}'.format(i, line.replace('branches', termcolor.colored('branches', 'red'))))
     return 0
 
 
@@ -134,7 +134,7 @@ def main():
         (['stat', 'status'], svn_status),
         (['up', 'update'], svn_update),
         (['freeze'], svn_freeze),
-        ]
+    ]
 
     #
     #
