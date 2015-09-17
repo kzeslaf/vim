@@ -74,11 +74,17 @@ def svn_freeze(path_list):
 
 def svn_info(path_list):
     """..."""
+    client = pysvn.Client()
+
     for i in path_list:
-        output = subprocess.check_output(['svn', 'info', '{}'.format(i)])
-        for line in output.split('\n'):
-            if line.startswith('Relative URL'):
-                print('[{}] {}'.format(i, line.replace('branches', termcolor.colored('branches', 'red'))))
+        info = client.info(i)
+
+        url = info.url
+        url = '^' + url[len(info.repos):]
+        url = url.replace('branches', termcolor.colored('branches', 'red'))
+
+        print('[{}] {}'.format(i, url))
+
     return 0
 
 
