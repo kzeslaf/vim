@@ -81,6 +81,7 @@ def svn_info(path_list):
         url = info.url
         url = '^' + url[len(info.repos):]
         url = url.replace('branches', termcolor.colored('branches', 'red'))
+        url = url.replace('trunk', termcolor.colored('trunk', 'cyan'))
         url = url.replace('STABLE', termcolor.colored('STABLE', 'green'))
 
         print('[{}] {}'.format(i, url))
