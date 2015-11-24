@@ -2,11 +2,11 @@ mkfile_path := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
 install:
 	# vim
-	ln -s $(mkfile_path)vimfiles ~/.vim
-	ln -s $(mkfile_path)vimrc ~/.vimrc
+	ln -sf $(mkfile_path)vim/vimfiles ~/.vim
+	ln -sf $(mkfile_path)vim/vimrc ~/.vimrc
 	# bin
 	mkdir -p ~/bin
-	ln -s $(mkfile_path)bin/ksvn.py ~/bin/ksvn
+	ln -sf $(mkfile_path)bin/ksvn.py ~/bin/ksvn
 
 uninstall:
 	# bin
