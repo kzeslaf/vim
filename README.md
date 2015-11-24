@@ -5,11 +5,7 @@ My configuration for vim editor
 Instalation
 -----------
 
-Linux:
-
-```
-make install
-```
+- Linux: `make install`
 
 
 Installed Plugins
