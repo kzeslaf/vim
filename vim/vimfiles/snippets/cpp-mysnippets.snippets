@@ -1,0 +1,28 @@
+snippet cl
+	class ${1:`Filename('$1', 'name')`}
+	{
+		public:
+			$1();
+			virtual ~$1();
+
+			${2:/* ... */}
+	};
+
+snippet once
+	#ifndef ${1:PROJECT}_${2:`toupper(Filename('$1_H_', 'name'))`}
+	#define $1_$2
+
+	${3:/* ... */}
+
+	#endif /* $1_$2 */
+
+snippet ns
+	namespace ${1:name} {
+	${2:/* ... */}
+	}  // namespace $1
+
+snippet nsa
+	namespace // anonymous
+	{
+	${2:/* ... */}
+	}  // namespace anonymous
