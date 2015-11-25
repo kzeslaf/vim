@@ -1,5 +1,18 @@
 set nocompatible
 
+""""""""""""""""""""""""""""""
+" Additional plugin dirs
+""""""""""""""""""""""""""""""
+
+set rtp+=~/.vim/bundle/pyflakes
+set rtp+=~/.vim/bundle/pythoncomplete
+set rtp+=~/.vim/bundle/tasklist
+
+
+""""""""""""""""""""""""""""""
+"
+""""""""""""""""""""""""""""""
+
 set backspace=indent,eol,start  " allow backspacing over everything in insert mode
 
 set nobackup                    " no backuping of edited file
