@@ -32,14 +32,6 @@ snippet #if
 	#if ${1:FOO}
 		${2}
 	#endif
-# Header Include-Guard
-snippet once
-	#ifndef ${1:`toupper(Filename('_$1_H_', '_UNTITLED_H_'))`}
-	#define $1
-
-	${2}
-
-	#endif /* end of include guard: $1 */
 # If Condition
 snippet if
 	if (${1:/* condition */}) {
