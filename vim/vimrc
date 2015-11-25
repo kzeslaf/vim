@@ -29,6 +29,12 @@ set expandtab
 set number
 set encoding=utf-8
 
+"
+" Show whitespace (turn off: 'set nolist')
+"
+set listchars=trail:~,tab:>-
+set list
+
 " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
 " let &guioptions = substitute(&guioptions, "t", "", "g")
 
