@@ -2,7 +2,7 @@ My configuration for vim editor
 ===============================
 
 
-Instalation
+Installation
 -----------
 
 - Linux: `make install`
