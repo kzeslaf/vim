@@ -20,9 +20,6 @@ Installed Plugins
 3. Pyflakes.vim
     - Version: 3.01 
     - Homepage: http://www.vim.org/scripts/script.php?script_id=2441
-4. Pythoncomplete
-    - Version: 0.9
-    - Homepage: http://www.vim.org/scripts/script.php?script_id=1542
 
 
 Other interesting plugins
@@ -30,3 +27,6 @@ Other interesting plugins
 
 1. TagList
 2. YouCompleteMe
+3. Pythoncomplete
+    - Version: 0.9
+    - Homepage: http://www.vim.org/scripts/script.php?script_id=1542
