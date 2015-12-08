@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <snippets>
     <snippet group="C++" trigger="inc" id="" complement="" removed="false" modified="false">#include &lt;$stdio.h$&gt;$$</snippet>
+    <snippet group="C++" trigger="mainn" id="" complement="" removed="false" modified="false">int main()
+{
+    $$
+    return 0;
+}
+</snippet>
     <snippet group="C++" trigger="namespace" id="cpp_namespace" complement="" removed="false" modified="true">namespace $name$ {
     
 }  // namespace $name$</snippet>
