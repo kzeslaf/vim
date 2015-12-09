@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <snippets>
+    <snippet group="C++" trigger="cl" id="cpp_genericclass" complement="" removed="false" modified="true">class $name$ $inheritance$
+{
+    public:
+        $name$();
+        virtual ~$name$();
+        
+        $$
+};</snippet>
     <snippet group="C++" trigger="inc" id="" complement="" removed="false" modified="false">#include &lt;$stdio.h$&gt;$$</snippet>
     <snippet group="C++" trigger="mainn" id="" complement="" removed="false" modified="false">int main()
 {

@@ -1,11 +1,11 @@
 snippet cl
-	class ${1:`Filename('$1', 'name')`}
+	class ${1:`Filename('$1', 'name')`}${2}
 	{
 		public:
 			$1();
 			virtual ~$1();
 
-			${2:/* ... */}
+			${3}
 	};
 snippet fori
 	for (int ${2:i} = 0; $2 < ${1:count}; $2${3:++}) {
