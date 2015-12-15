@@ -31,17 +31,28 @@ import traceback
 
 
 #######################
-# Functions
+# Constats
 #######################
 
 
-def is_working_copy(path):
+RES_OK = 0
+RES_ERROR = 1
+RES_INVARG = 2
+
+
+#######################
+# Utils Functions
+#######################
+
+
+def get_relative_url(info):
     """..."""
-    while path != '' and path != '/':
-        if os.path.exists(os.path.join(path, '.svn')):
-            return True
-        path = os.path.abspath(os.path.join(path, '..'))
-    return False
+    assert isinstance(info, pysvn.PysvnEntry)
+
+    url = info.url
+    url = '^' + url[len(info.repos):]
+
+    return url
 
 
 def list_working_copies(path):
@@ -58,7 +69,36 @@ def list_working_copies(path):
     return result
 
 
-def svn_freeze(path_list):
+def is_dirty(status):
+    """..."""
+    assert isinstance(status, list)
+    if status: assert isinstance(status[0], pysvn.PysvnStatus)
+
+    sk = pysvn.wc_status_kind
+    ok_states = [sk.unversioned, sk.normal, sk.ignored]
+
+    for i in status:
+        if i.text_status not in ok_states:
+            return True
+
+    return False
+
+
+def is_working_copy(path):
+    """..."""
+    while path != '' and path != '/':
+        if os.path.exists(os.path.join(path, '.svn')):
+            return True
+        path = os.path.abspath(os.path.join(path, '..'))
+    return False
+
+
+########################
+# Command Functions
+########################
+
+
+def svn_freeze(path_list, params):
     """..."""
     client = pysvn.Client()
     result = []
@@ -71,15 +111,13 @@ def svn_freeze(path_list):
         print(i)
 
 
-def svn_info(path_list):
+def svn_info(path_list, params):
     """..."""
     client = pysvn.Client()
 
     for i in path_list:
-        info = client.info(i)
+        url = get_relative_url(client.info(i))
 
-        url = info.url
-        url = '^' + url[len(info.repos):]
         url = url.replace('branches', termcolor.colored('branches', 'red'))
         url = url.replace('trunk', termcolor.colored('trunk', 'cyan'))
         url = url.replace('STABLE', termcolor.colored('STABLE', 'green'))
@@ -89,26 +127,45 @@ def svn_info(path_list):
     return 0
 
 
-def svn_status(path_list):
+def svn_status(path_list, params):
     """..."""
-    sk = pysvn.wc_status_kind
-    ok_states = [sk.unversioned, sk.normal, sk.ignored]
-
     client = pysvn.Client()
 
     for i in path_list:
-
         dirty = False
         status = client.status(i)
 
         for j in status:
-            if j.text_status not in ok_states:
+            if is_dirty(status):
                 dirty = True
                 break
 
         print('{} {}'.format(i, termcolor.colored('Dirty', 'red') if dirty else 'Clean'))
 
     return 0
+
+
+def svn_switch(path_list, params):
+    """..."""
+    try:
+        from_ = params[0]
+        to = params[1]
+    except:
+        return RES_INVARG
+
+    client = pysvn.Client()
+
+    for i in path_list:
+        url = get_relative_url(client.info(i))
+        if url == from_:
+            if is_dirty(client.status(i)):
+                print('{} is Dirty, ommiting ...'.format(i))
+
+            res = os.system('( echo Directory: [{0}]; cd {0}; svn switch {1} )'.format(i, to))
+            if res != 0:
+                return res
+
+    return RES_OK
 
 
 def svn_update(path_list):
@@ -137,10 +194,11 @@ def main():
     #
     #
     functions = [
+        (['freeze'], svn_freeze),
         (['info'], svn_info),
         (['stat', 'status'], svn_status),
         (['up', 'update'], svn_update),
-        (['freeze'], svn_freeze),
+        (['switch'], svn_switch),
     ]
 
     #
@@ -150,7 +208,7 @@ def main():
 
     for i in functions:
         if sys.argv[1] in i[0]:
-            return i[1](wc_list)
+            return i[1](wc_list, sys.argv[2:])
 
     raise Exception('Unknown command: {}'.format(sys.argv[1:]))
 
@@ -162,8 +220,11 @@ def main():
 
 if __name__ == '__main__':
     try:
-        main()
+        res = main()
     except Exception as e:
         print(e)
         traceback.print_exc()
-        sys.exit(1)
+        sys.exit(RES_ERROR)
+
+    if res != RES_OK:
+        sys.exit(res)
