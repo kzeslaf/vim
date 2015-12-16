@@ -26,6 +26,7 @@ set expandtab
 
 set number
 set encoding=utf-8
+set nowrap
 
 syntax on
 set hlsearch
