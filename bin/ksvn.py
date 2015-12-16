@@ -157,11 +157,11 @@ def svn_switch(path_list, params):
 
     for i in path_list:
         url = get_relative_url(client.info(i))
-        if url == from_:
+        if url.startswith(from_):
             if is_dirty(client.status(i)):
                 print('{} is Dirty, ommiting ...'.format(i))
 
-            res = os.system('( echo Directory: [{0}]; cd {0}; svn switch {1} )'.format(i, to))
+            res = os.system('( echo Directory: [{0}]; cd {0}; svn switch {1} )'.format(i, url.replace(from_, to)))
             if res != 0:
                 return res
 
