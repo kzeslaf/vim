@@ -168,13 +168,18 @@ def svn_switch(path_list, params):
     return RES_OK
 
 
-def svn_update(path_list):
+def svn_update(path_list, params):
     """..."""
     for i in path_list:
         res = os.system('( echo Directory: [{0}]; cd {0}; svn update )'.format(i))
         if res != 0:
             return res
     return 0
+
+
+##########################
+#
+##########################
 
 
 def main():
