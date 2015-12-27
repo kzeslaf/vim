@@ -4,6 +4,7 @@ set nocompatible
 " Additional plugin dirs
 """"""""""""""""""""""""""""""
 
+set rtp+=~/.vim/bundle/nerdcommenter
 set rtp+=~/.vim/bundle/pyflakes
 set rtp+=~/.vim/bundle/tasklist
 

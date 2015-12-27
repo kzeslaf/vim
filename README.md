@@ -18,8 +18,11 @@ Installed Plugins
     - Version: 1.0.1
     - Homepage: http://www.vim.org/scripts/script.php?script_id=2607
 3. Pyflakes.vim
-    - Version: 3.01 
+    - Version: 3.01
     - Homepage: http://www.vim.org/scripts/script.php?script_id=2441
+4. NERD Commenter
+    - Version: 2.3.0
+    - Homepage: http://www.vim.org/scripts/script.php?script_id=1218
 
 
 Other interesting plugins
