@@ -20,6 +20,9 @@
 ### Explorer Mode
 
 - entering explorer mode: `:E` or `:Explore`
+- commands in explorer mode:
+  * `o` opens the file in a horizontal split 
+  * `v` opens the file in a vertical split
 - [More Info](https://blog.mozhu.info/vimmers-you-dont-need-nerdtree-18f627b561c3#.tx7chsi61)
 
 
