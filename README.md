@@ -32,6 +32,12 @@
 - `Ctrl+w` `arrow` - move cursor to another window
 - `Ctrl+w` `Ctrl+w` - move cursor to another window (cycle)
 
+### Word Completition
+
+In insert mode, type the first couple of characters of a word, then press:
+  - `Ctrl-n` to insert the next matching word; or
+  - `Ctrl-p` to insert the previous matching word.
+
 
 ## Other Interesting Plugins
 
