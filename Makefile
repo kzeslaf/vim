@@ -3,7 +3,7 @@ mkfile_path := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
 USAGE := Usage: make install-bin|install-qtcreator|install-vim
 
-.PHONY:help install-bin install-qtcreator install-vim 
+.PHONY: help install-bin install-qtcreator install-vim 
 
 
 help:
