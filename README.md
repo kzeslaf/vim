@@ -25,6 +25,6 @@
 
 ## Other interesting plugins
 
-1. TagList
-2. YouCompleteMe
-3. [Pythoncomplete](http://www.vim.org/scripts/script.php?script_id=1542)
+1. [Pythoncomplete](http://www.vim.org/scripts/script.php?script_id=1542)
+2. TagList
+3. YouCompleteMe
