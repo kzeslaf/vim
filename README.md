@@ -1,15 +1,12 @@
-My configuration for vim editor
-===============================
+# My configuration for vim editor
 
 
-Installation
------------
+## Installation
 
 - Linux: `make install-vim`
 
 
-Installed Plugins
------------------
+## Installed Plugins
 
 1. [NERD Commenter](http://www.vim.org/scripts/script.php?script_id=1218) (Version: 2.3.0)
 2. [Pyflakes.vim](http://www.vim.org/scripts/script.php?script_id=2441) (Version: 3.01)
@@ -18,15 +15,15 @@ Installed Plugins
 4. [TaskList](http://www.vim.org/scripts/script.php?script_id=2607) (Version: 1.0.1)
 
 
-Vim Cheat Sheet
----------------
+## Vim Cheat Sheet
 
-- entering explorer mode: `:E` or `:Explore`,
-  [More Info](https://blog.mozhu.info/vimmers-you-dont-need-nerdtree-18f627b561c3#.tx7chsi61)
+### Explorer Mode
+
+- entering explorer mode: `:E` or `:Explore`
+- [More Info](https://blog.mozhu.info/vimmers-you-dont-need-nerdtree-18f627b561c3#.tx7chsi61)
 
 
-Other interesting plugins
--------------------------
+## Other interesting plugins
 
 1. TagList
 2. YouCompleteMe
