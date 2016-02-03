@@ -23,7 +23,7 @@
 - [More Info](https://blog.mozhu.info/vimmers-you-dont-need-nerdtree-18f627b561c3#.tx7chsi61)
 
 
-## Other interesting plugins
+## Other Interesting Plugins
 
 1. [Pythoncomplete](http://www.vim.org/scripts/script.php?script_id=1542)
 2. TagList
