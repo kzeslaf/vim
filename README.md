@@ -34,7 +34,7 @@
 
 ### Word Completition
 
-In insert mode, type the first couple of characters of a word, then press:
+In `insert mode`, type the first couple of characters of a word, then press:
   - `Ctrl-n` to insert the next matching word; or
   - `Ctrl-p` to insert the previous matching word.
 
