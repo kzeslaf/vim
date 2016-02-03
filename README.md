@@ -25,6 +25,13 @@
   * `v` opens the file in a vertical split
 - [More Info](https://blog.mozhu.info/vimmers-you-dont-need-nerdtree-18f627b561c3#.tx7chsi61)
 
+### Multiple Windows
+
+- `:split file` - split window horizontally and load file
+- `:vsplit file` - split window vertically and load file
+- `Ctrl+w` `arrow` - move cursor to another window
+- `Ctrl+w` `Ctrl+w` - move cursor to another window (cycle)
+
 
 ## Other Interesting Plugins
 
