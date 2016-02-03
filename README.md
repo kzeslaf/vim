@@ -33,3 +33,10 @@ Other interesting plugins
 3. Pythoncomplete
     - Version: 0.9
     - Homepage: http://www.vim.org/scripts/script.php?script_id=1542
+
+
+Vim Cheat Sheet
+---------------
+
+- entering explorer mode: `:E` or `:Explore`,
+  [More Info](https://blog.mozhu.info/vimmers-you-dont-need-nerdtree-18f627b561c3#.tx7chsi61)
