@@ -34,6 +34,12 @@
 - `Ctrl+w` `_` or `Ctrl+w` `|` - maximize window horizontally/vertically
 - `Ctrl+w` `=` - resize windows to equal size
 
+### Spelling
+
+- `]s` - move to next misspelled word
+- `[s` - move to previous misspelled word
+- `z=` - suggest correctly spelled words
+
 ### Word Completition
 
 In `insert mode`, type the first couple of characters of a word, then press:
