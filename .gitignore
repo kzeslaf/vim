@@ -1,3 +1,5 @@
 .idea
+
 vim/vimfiles/.netrwhist
 vim/vimfiles/bundle/pyflakes/ftplugin/python/pyflakes/pyflakes/*.pyc
+vim/vimfiles/spell
