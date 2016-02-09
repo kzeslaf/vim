@@ -45,7 +45,7 @@ Resize windows:
 - `[s` - move to previous misspelled word
 - `z=` - suggest correctly spelled words
 
-### Word Completition
+### Word Completion
 
 In `insert mode`, type the first couple of characters of a word, then press:
   - `Ctrl-n` to insert the next matching word; or
