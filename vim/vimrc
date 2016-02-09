@@ -17,22 +17,23 @@ set backspace=indent,eol,start  " allow backspacing over everything in insert mo
 
 set nobackup                    " no backuping of edited file
 set history=50                  " keep 50 lines of command line history
-set ruler                       " show the cursor position all the time
 set showcmd                     " display incomplete commands
+set ruler                       " show the cursor position all the time
+set nowrap
+
 set incsearch                   " do incremental searching
+set hlsearch
 
 set shiftwidth=4
 set tabstop=4
 set expandtab
 
-set number
 set encoding=utf-8
-set nowrap
+
+set number
+set showmatch                   " show matching (), [], ...
 
 syntax on
-set hlsearch
-
-set showmatch                   " show matching (), [], ...
 
 "
 " Show whitespace (to turn off: 'set nolist')
@@ -51,6 +52,11 @@ set list
 filetype plugin indent on
 
 "
+" For all text files show right margin at 80 column
+"
+autocmd FileType text setlocal cc=80
+
+"
 " When editing a file, always jump to the last known cursor position.
 " Don't do it when the position is invalid or when inside an event handler
 " (happens when dropping a file on gvim).
@@ -59,6 +65,12 @@ autocmd BufReadPost *
   \ if line("'\"") > 0 && line("'\"") <= line("$") |
   \   exe "normal g`\"" |
   \ endif
+
+"
+" Spelling (turn off: set nospell)
+"
+set spell
+set spelllang=en
 
 "
 " Settings for Netrw Directory Listing
@@ -74,4 +86,6 @@ let g:netrw_sort_sequence='[\/]$,*'
 "
 " pyflakes
 "
-highlight SpellBad cterm=undercurl,bold ctermbg=NONE
+" Change "SpellBad" style when opening any python file.
+"
+autocmd FileType python highlight SpellBad cterm=undercurl,bold ctermbg=NONE
