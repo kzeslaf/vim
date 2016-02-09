@@ -31,6 +31,8 @@
 - `:vsplit file` - split window vertically and load file
 - `Ctrl+w` `arrow` - move cursor to another window
 - `Ctrl+w` `Ctrl+w` - move cursor to another window (cycle)
+- `Ctrl+w` `_` or `Ctrl+w` `|` - maximize window horizontally/vertically
+- `Ctrl+w` `=` - resize windows to equal size
 
 ### Word Completition
 
