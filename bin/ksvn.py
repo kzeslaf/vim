@@ -110,6 +110,15 @@ def is_working_copy(path):
     return False
 
 
+def remove(files):
+    """..."""
+    for f in files:
+        if os.path.isdir(f):
+            shutil.rmtree(f)
+        else:
+            os.remove(f)
+
+
 ########################
 # Command Functions
 ########################
@@ -124,13 +133,17 @@ def svn_clear(path_list, params):
 
     Additional params:
         --all - remove all files (for example: *.user)
+        --force - don't require user confirmation
     """
+    PARAM_ALL = '--all'
+    PARAM_FORCE = '--force'
+
     client = pysvn.Client()
 
     for i in  path_list:
         files = get_unversioned_files(client.status(i))
 
-        if '--all' not in params:
+        if PARAM_ALL not in params:
             files = [v for v in files if not v.endswith('.user')]
             files = [v for v in files if not v.endswith('.idea')]
 
@@ -140,16 +153,10 @@ def svn_clear(path_list, params):
         for f in files:
             print(f)
 
-        proceed = 'y' if '--force' in params else raw_input('--> Proceed [y/N]: ')
-        if proceed not in ['y', 'Y', 'yes']:
-            continue
+        proceed = 'y' if PARAM_FORCE in params else raw_input('--> Proceed [y/N]: ')
 
-        for f in files:
-            if os.path.isdir(f):
-                shutil.rmtree(f)
-            else:
-                os.remove(f)
-
+        if proceed in ['y', 'Y', 'yes']:
+            remove(files)
 
 
 def svn_freeze(path_list, params):
