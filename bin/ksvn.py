@@ -26,6 +26,7 @@ import pysvn
 import termcolor
 
 import os
+import shutil
 import sys
 import traceback
 
@@ -53,6 +54,21 @@ def get_relative_url(info):
     url = '^' + url[len(info.repos):]
 
     return url
+
+
+def get_unversioned_files(status):
+    """Return list of unversioned and ignored files."""
+    assert isinstance(status, list)
+    if status: assert isinstance(status[0], pysvn.PysvnStatus)
+
+    result = []
+    sk = pysvn.wc_status_kind
+
+    for i in status:
+        if i.text_status in [sk.unversioned, sk.ignored]:
+            result.append(os.path.abspath(i.path))
+
+    return result
 
 
 def list_working_copies(path):
@@ -96,6 +112,43 @@ def is_working_copy(path):
 ########################
 # Command Functions
 ########################
+
+
+def svn_clear(path_list, params):
+    """Remove unversioned/ignored items in working copy.
+
+    Function does not remove following files:
+        - .idea
+        - *.user
+
+    Additional params:
+        --all - remove all files (for example: *.user)
+    """
+    client = pysvn.Client()
+
+    for i in  path_list:
+        files = get_unversioned_files(client.status(i))
+
+        if '--all' not in params:
+            files = [v for v in files if not v.endswith('.user')]
+            files = [v for v in files if not v.endswith('.idea')]
+
+        if not files:
+            continue
+
+        for f in files:
+            print(f)
+
+        proceed = 'y' if '--force' in params else raw_input('--> Proceed [y/N]: ')
+        if proceed not in ['y', 'Y', 'yes']:
+            continue
+
+        for f in files:
+            if os.path.isdir(f):
+                shutil.rmtree(f)
+            else:
+                os.remove(f)
+
 
 
 def svn_freeze(path_list, params):
@@ -159,7 +212,7 @@ def svn_switch(path_list, params):
         url = get_relative_url(client.info(i))
         if url.startswith(from_):
             if is_dirty(client.status(i)):
-                print('{} is Dirty, ommiting ...'.format(i))
+                print('{} is Dirty, omitting ...'.format(i))
 
             res = os.system('( echo Directory: [{0}]; cd {0}; svn switch {1} )'.format(i, url.replace(from_, to)))
             if res != 0:
@@ -189,22 +242,32 @@ def main():
     #
     #
     #
-    if is_working_copy(cwd):
-        if sys.argv[1] == 'clear':
-            return os.system(r"rm -rf `svn status --no-ignore | grep '^[\?I]' | sed 's/^[\?I]//'`")
-        else:
-            return os.system('svn ' + ' '.join(sys.argv[1:]))
+    wc_functions = [
+       (['clear'], svn_clear),
+    ]
 
     #
     #
     #
     functions = [
+        (['clear'], svn_clear),
         (['freeze'], svn_freeze),
         (['info'], svn_info),
         (['stat', 'status'], svn_status),
         (['up', 'update'], svn_update),
         (['switch'], svn_switch),
     ]
+
+    #
+    #
+    #
+    if is_working_copy(cwd):
+
+        for i in wc_functions:
+            if sys.argv[1] in i[0]:
+                return i[1]('.', sys.argv[2:])
+
+        return os.system('svn ' + ' '.join(sys.argv[1:]))
 
     #
     #
