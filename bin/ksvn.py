@@ -26,6 +26,7 @@ import pysvn
 import termcolor
 
 import os
+import re
 import shutil
 import sys
 import traceback
@@ -221,6 +222,15 @@ def svn_switch(path_list, params):
     return RES_OK
 
 
+def svn_switch_wc(path_list, params):
+    """..."""
+    for i, v in enumerate(params):
+        if re.match(r'\d+', v):
+            params[i] = '^/branches/feature/' + v
+
+    return os.system('svn switch ' + ' '.join(params))
+
+
 def svn_update(path_list, params):
     """..."""
     for i in path_list:
@@ -244,6 +254,7 @@ def main():
     #
     wc_functions = [
        (['clear'], svn_clear),
+       (['switch'], svn_switch_wc),
     ]
 
     #
