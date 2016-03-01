@@ -12,6 +12,7 @@ help:
 install-bin:
 	mkdir -p ~/bin
 	ln -sf $(mkfile_path)bin/ksvn.py ~/bin/ksvn
+	ln -sf $(mkfile_path)bin/qtfiles.py ~/bin/qtfiles
 
 install-qtcreator:
 	ln -sf $(mkfile_path)qtcreator/codestyles ~/.config/QtProject/qtcreator/codestyles
