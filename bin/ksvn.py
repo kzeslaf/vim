@@ -140,7 +140,7 @@ def svn_clear(path_list, params):
 
     client = pysvn.Client()
 
-    for i in  path_list:
+    for i in path_list:
         files = get_unversioned_files(client.status(i))
 
         if PARAM_ALL not in params:
@@ -260,8 +260,8 @@ def main():
     #
     #
     wc_functions = [
-       (['clear'], svn_clear),
-       (['switch'], svn_switch_wc),
+        (['clear'], svn_clear),
+        (['switch'], svn_switch_wc),
     ]
 
     #
