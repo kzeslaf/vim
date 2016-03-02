@@ -18,9 +18,6 @@ import sys
 #######################
 
 
-QTPROJ_PATH = 'proj/qtcreator'
-
-
 FILES_TYPES = [
     'Doxyfile',
     'Makefile',
@@ -60,7 +57,6 @@ def get_files(path, qtproj_path):
     return sorted(result, key=lambda f: (os.path.dirname(f), os.path.basename(f)))
 
 
-
 def main():
     """..."""
     try:
@@ -70,7 +66,7 @@ def main():
         return
 
     cwd = os.path.abspath(os.getcwd())
-    files =  get_files(cwd, os.path.split(files_path)[0])
+    files = get_files(cwd, os.path.split(files_path)[0])
 
     with open(files_path, 'w') as f:
         for i in files:
