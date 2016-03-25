@@ -11,6 +11,7 @@ help:
 
 install-bin:
 	mkdir -p ~/bin
+	ln -sf $(mkfile_path)bin/cp1250-to-utf8.py ~/bin/cp1250-to-utf8
 	ln -sf $(mkfile_path)bin/ksvn.py ~/bin/ksvn
 	ln -sf $(mkfile_path)bin/pycheck.py ~/bin/pycheck
 	ln -sf $(mkfile_path)bin/qtfiles.py ~/bin/qtfiles
