@@ -27,6 +27,7 @@ FILES_TYPES = [
     r'.*\.dox',
     r'.*\.h',
     r'.*\.cpp',
+    r'.*\.xml',
     r'.*\.txt\.template',
 ]
 
