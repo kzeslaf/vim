@@ -215,6 +215,7 @@ def svn_switch(path_list, params):
         return RES_INVARG
 
     client = pysvn.Client()
+    error = False
 
     for i in path_list:
         url = get_relative_url(client.info(i))
@@ -224,8 +225,10 @@ def svn_switch(path_list, params):
 
             res = os.system('( echo Directory: [{0}]; cd {0}; svn switch {1} )'.format(i, url.replace(from_, to)))
             if res != 0:
-                return res
+                error = True
 
+    if error:
+        return RES_ERROR
     return RES_OK
 
 
