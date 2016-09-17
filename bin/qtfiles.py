@@ -29,6 +29,7 @@ FILES_TYPES = [
     r'.*\.cpp',
     r'.*\.xml',
     r'.*\.txt\.template',
+    r'README\.*',
 ]
 
 
