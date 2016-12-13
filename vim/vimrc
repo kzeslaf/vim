@@ -80,6 +80,14 @@ let g:netrw_sort_sequence='[\/]$,*'
 
 
 """"""""""""""""""""
+" Clang-Format
+""""""""""""""""""""
+
+map <C-K> :pyf ~/bin/clang-format.py<cr>
+imap <C-K> <c-o>:pyf ~/bin/clang-format.py<cr>
+
+
+""""""""""""""""""""
 " Plugins
 """"""""""""""""""""
 
