@@ -69,7 +69,7 @@ autocmd BufReadPost *
 "
 " Spelling (turn off: set nospell)
 "
-set spell
+autocmd FileType text set spell
 set spelllang=en
 
 "
@@ -77,6 +77,13 @@ set spelllang=en
 "
 let g:netrw_liststyle=3
 let g:netrw_sort_sequence='[\/]$,*'
+
+"
+" Turn on sytax highlightning for SConstruct files
+"
+if @% == "SConstruct" || @% == "SConscript"
+    set syntax=python
+endif
 
 
 """"""""""""""""""""
