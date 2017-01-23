@@ -69,8 +69,8 @@ autocmd BufReadPost *
 "
 " Spelling (turn off: set nospell)
 "
-autocmd FileType text set spell
-set spelllang=en
+set spell
+set spelllang=en,pl
 
 "
 " Settings for Netrw Directory Listing
