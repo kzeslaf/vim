@@ -21,15 +21,17 @@ TODO:
     - dodać polecenie 'stat'
 """
 
-# TODO: ...
-import pysvn
-import termcolor
-
 import os
 import re
 import shutil
 import sys
 import traceback
+
+# TODO: ...
+import pysvn
+
+sys.path.append(os.path.join(os.path.dirname(os.path.realpath(__file__)), "../third-party/termcolor"))
+import termcolor
 
 
 #######################
