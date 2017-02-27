@@ -52,6 +52,13 @@ autocmd BufReadPost *
   \ endif
 
 
+"
+" Cleanup trailing whitespace
+"
+autocmd FileType c,cpp,python
+    \ autocmd BufWritePre * %s/\s\+$//e
+
+
 """"""""""""""""""""""""""""""
 " My Mappings
 """"""""""""""""""""""""""""""
@@ -99,9 +106,9 @@ set rtp+=~/.vim/bundle/tasklist
 "
 " Clang-Format
 "
-autocmd FileType cpp
+autocmd FileType c,cpp
     \ map <C-K> :pyf ~/bin/clang-format.py<cr> |
-    \ imap <C-K> <c-o>:pyf ~/bin/clang-format.py<cr>
+    \ imap <C-K> <C-O>:pyf ~/bin/clang-format.py<cr>
 
 
 "
