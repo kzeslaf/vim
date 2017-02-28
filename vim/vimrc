@@ -91,6 +91,7 @@ endif
 "
 " Additional plugin directories
 "
+set rtp+=~/.vim/bundle/groovy-indent
 set rtp+=~/.vim/bundle/nerdcommenter
 set rtp+=~/.vim/bundle/pyflakes
 set rtp+=~/.vim/bundle/tasklist
