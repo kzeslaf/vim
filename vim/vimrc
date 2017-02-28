@@ -52,17 +52,10 @@ autocmd BufReadPost *
   \ endif
 
 
-"
-" Cleanup trailing whitespace
-"
-autocmd FileType c,cpp,python
-    \ autocmd BufWritePre * %s/\s\+$//e
-
-
 """"""""""""""""""""""""""""""
 " My Mappings
 """"""""""""""""""""""""""""""
-
+map <F9> :%s/\s\+$//e<CR>
 map <F12> :nohlsearch<CR>
 
 
