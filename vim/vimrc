@@ -75,13 +75,8 @@ autocmd FileType cpp
 "
 " 1. Turn on syntax highlighting for SConstruct files
 "
-
-" FIXME:
-"    * this should by done with FileType event
-
-if @% == "SConstruct" || @% == "SConscript"
-    setlocal syntax=python
-endif
+autocmd FileType scons
+    \ setlocal syntax=python
 
 
 """"""""""""""""""""""""""""""
