@@ -105,7 +105,7 @@ def is_dirty(status):
 
 def is_working_copy(path):
     """..."""
-    while path != '' and path != '/':
+    while path != '' and path != '/' and path[1:] != ":\\":
         if os.path.exists(os.path.join(path, '.svn')):
             return True
         path = os.path.abspath(os.path.join(path, '..'))
