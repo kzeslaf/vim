@@ -55,6 +55,7 @@ autocmd BufReadPost *
 """"""""""""""""""""""""""""""
 " My Mappings
 """"""""""""""""""""""""""""""
+
 map <F9> :%s/\s\+$//e<CR>
 map <F12> :nohlsearch<CR>
 
