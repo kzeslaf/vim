@@ -106,8 +106,8 @@ set rtp^=~/.vim/bundle/tasklist
 " Clang-Format
 "
 autocmd FileType c,cpp
-    \ map <C-K> :pyf ~/bin/clang-format.py<cr> |
-    \ imap <C-K> <C-O>:pyf ~/bin/clang-format.py<cr>
+    \ map <buffer> <C-K> :pyf ~/bin/clang-format.py<cr> |
+    \ imap <buffer> <C-K> <C-O>:pyf ~/bin/clang-format.py<cr>
 
 
 "
