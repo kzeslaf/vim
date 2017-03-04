@@ -66,16 +66,21 @@ map <F12> :nohlsearch<CR>
 """"""""""""""""""""""""""""""
 
 "
+" C
+"
+autocmd FileType c
+    \ setlocal syntax=c.doxygen
+
+"
 " C++
 "
 autocmd FileType cpp
-    \ setlocal cc=
+    \ setlocal cc= |
+    \ setlocal syntax=cpp.doxygen
 
 
 "
 " SCons
-"
-" 1. Turn on syntax highlighting for SConstruct files
 "
 autocmd FileType scons
     \ setlocal syntax=python
