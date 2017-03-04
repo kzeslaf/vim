@@ -71,12 +71,25 @@ map <F12> :nohlsearch<CR>
 autocmd FileType c
     \ setlocal syntax=c.doxygen
 
+
 "
 " C++
 "
+autocmd BufNewFile main.cpp
+    \ 0read ~/.vim/skeletons/main.cpp |
+    \ normal Gdd1G
+
 autocmd FileType cpp
     \ setlocal cc= |
     \ setlocal syntax=cpp.doxygen
+
+
+"
+" Make
+"
+autocmd BufNewFile Makefile
+    \ 0read ~/.vim/skeletons/Makefile |
+    \ normal Gdd1G
 
 
 "
