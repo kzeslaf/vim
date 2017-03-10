@@ -56,11 +56,12 @@ autocmd BufReadPost *
 " My Mappings
 """"""""""""""""""""""""""""""
 
-map <Space> <C-D>
+noremap <Space> <C-D>
+noremap Q gq
 
-map <F8> <Esc>ggVG
-map <F9> :%s/\s\+$//e<CR>
-map <F12> :nohlsearch<CR>
+noremap <F8> <Esc>ggVG
+noremap <F9> :%s/\s\+$//e<CR>
+noremap <F12> :nohlsearch<CR>
 
 
 """"""""""""""""""""""""""""""
