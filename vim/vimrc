@@ -113,6 +113,7 @@ set rtp-=~/.vim
 
 set rtp^=~/.vim/bundle/snipMate/after
 
+set rtp^=~/.vim/bundle/autohighlight
 set rtp^=~/.vim/bundle/groovy-indent
 set rtp^=~/.vim/bundle/nerdcommenter
 set rtp^=~/.vim/bundle/pyflakes
