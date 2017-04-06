@@ -33,7 +33,12 @@ FILES_TYPES = [
 ]
 
 
-OMITTED_DIRS = r'.*(buildtools|third-party).*'
+OMITTED_DIRS = [
+    '.git',
+    '.svn',
+    'buildtools',
+    'third-party',
+]
 
 
 ######################
@@ -45,16 +50,18 @@ def get_files(path, qtproj_path):
     """..."""
     result = []
 
-    for dirpath, dirnames, filenames in os.walk(path):
+    files = map(lambda x: os.path.join(path, x),  os.listdir(path))
 
-        if re.match(OMITTED_DIRS, dirpath):
-            continue
+    for i in files:
+        if os.path.isdir(i) is True:
+            if os.path.split(i)[1] in OMITTED_DIRS:
+                continue
+            result += get_files(i, qtproj_path)
 
-        for f in filenames:
-            for r in FILES_TYPES:
-                if re.match(r, f):
-                    result.append(os.path.join(os.path.relpath(dirpath, os.path.join(path, qtproj_path)), f))
-                    break
+        for r in FILES_TYPES:
+            if re.match(r, os.path.split(i)[1]):
+                result.append(os.path.relpath(i, qtproj_path))
+                break
 
     return sorted(result, key=lambda f: (os.path.dirname(f), os.path.basename(f)))
 
