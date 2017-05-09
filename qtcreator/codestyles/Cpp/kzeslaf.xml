@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorCodeStyle>
-<!-- Written by QtCreator 3.5.1, 2015-12-04T19:13:39. -->
+<!-- Written by QtCreator 4.2.1, 2017-05-09T12:10:43. -->
 <qtcreator>
  <data>
   <variable>CodeStyleData</variable>
@@ -28,12 +28,13 @@
    <value type="bool" key="IndentStatementsRelativeToSwitchLabels">true</value>
    <value type="bool" key="IndentSwitchLabels">true</value>
    <value type="int" key="PaddingMode">2</value>
+   <value type="bool" key="ShortGetterName">true</value>
    <value type="bool" key="SpacesForTabs">true</value>
    <value type="int" key="TabSize">4</value>
   </valuemap>
  </data>
  <data>
   <variable>DisplayName</variable>
-  <value type="QString">kbielen</value>
+  <value type="QString">kzeslaf</value>
  </data>
 </qtcreator>
