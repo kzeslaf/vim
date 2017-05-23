@@ -10,11 +10,12 @@
 
 1. [autohighlight](http://vim.wikia.com/wiki/Auto_highlight_current_word_when_idle)
 2. [groovy-indent](http://www.vim.org/scripts/script.php?script_id=2961) (Version: 0.1)
-3. [NERD Commenter](http://www.vim.org/scripts/script.php?script_id=1218) (Version: 2.3.0)
-4. [Pyflakes.vim](http://www.vim.org/scripts/script.php?script_id=2441) (Version: 3.01)
-5. [Snipmate](http://www.vim.org/scripts/script.php?script_id=2540)
+3. [linediff](http://www.vim.org/scripts/script.php?script_id=3745) (Version: 0.2.0)
+4. [NERD Commenter](http://www.vim.org/scripts/script.php?script_id=1218) (Version: 2.3.0)
+5. [Pyflakes.vim](http://www.vim.org/scripts/script.php?script_id=2441) (Version: 3.01)
+6. [Snipmate](http://www.vim.org/scripts/script.php?script_id=2540)
    (Version: [f5a75d07](https://github.com/msanders/snipmate.vim/commit/f5a75d075d3c005ebe69e3f5e56cf99516e8aa3b))
-6. [TaskList](http://www.vim.org/scripts/script.php?script_id=2607) (Version: 1.0.1)
+7. [TaskList](http://www.vim.org/scripts/script.php?script_id=2607) (Version: 1.0.1)
 
 
 ## Vim Cheat Sheet
