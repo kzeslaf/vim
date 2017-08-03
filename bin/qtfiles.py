@@ -20,6 +20,7 @@ import sys
 
 FILES_TYPES = [
     'Doxyfile',
+    'Jenkinsfile',
     'Makefile',
     'SConscript',
     'SConstruct',
