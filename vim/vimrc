@@ -117,6 +117,7 @@ set rtp^=~/.vim/bundle/autohighlight
 set rtp^=~/.vim/bundle/groovy-indent
 set rtp^=~/.vim/bundle/linediff
 set rtp^=~/.vim/bundle/nerdcommenter
+set rtp^=~/.vim/bundle/plantuml-syntax
 set rtp^=~/.vim/bundle/pyflakes
 set rtp^=~/.vim/bundle/snipMate
 set rtp^=~/.vim/bundle/tasklist
