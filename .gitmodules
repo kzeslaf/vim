@@ -1,3 +1,3 @@
-[submodule "vim/vimfiles/bundle/plantuml-syntax"]
-	path = vim/vimfiles/bundle/plantuml-syntax
-	url = https://github.com/aklt/plantuml-syntax.git
+[submodule "vim/vimfiles/pack/kzeslaf/start/plantuml-syntax"]
+	path = vim/vimfiles/pack/kzeslaf/start/plantuml-syntax
+	url = https://github.com/kzeslaf/plantuml-syntax.git
