@@ -4,3 +4,6 @@
 [submodule "vim/vimfiles/pack/kzeslaf/start/linediff"]
 	path = vim/vimfiles/pack/kzeslaf/start/linediff
 	url = https://github.com/kzeslaf/linediff.vim.git
+[submodule "vim/vimfiles/pack/kzeslaf/start/groovyindent"]
+	path = vim/vimfiles/pack/kzeslaf/start/groovyindent
+	url = https://github.com/kzeslaf/groovyindent-unix.git
