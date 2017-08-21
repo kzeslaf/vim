@@ -4,4 +4,3 @@
 [submodule "vim/vimfiles/pack/kzeslaf/start/linediff"]
 	path = vim/vimfiles/pack/kzeslaf/start/linediff
 	url = https://github.com/kzeslaf/linediff.vim.git
-	branch = d83f786
