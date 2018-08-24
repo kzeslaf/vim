@@ -11,10 +11,6 @@
 - [groovy-indent](http://www.vim.org/scripts/script.php?script_id=2961) (Version: 0.1)
 
 
-## Vim Cheat Sheet
-
-- `<leader> == \`
-
 ### Explorer Mode
 
 - entering explorer mode: `:E` or `:Explore`
@@ -36,12 +32,6 @@ Move cursor to another window:
 Resize windows:
 - `Ctrl+w` `_` or `Ctrl+w` `|` - maximize window horizontally/vertically
 - `Ctrl+w` `=` - resize windows to equal size
-
-### NERD Commenter Plugin
-
-In `visual mode`:
-- `<leader>cc` - comment out selection
-- `<leader>cu` - uncomment selection
 
 ### Spelling
 
