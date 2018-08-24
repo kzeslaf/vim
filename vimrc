@@ -2,7 +2,6 @@
 " My .vimrc file
 "
 
-
 """"""""""""""""""""""""""""""
 " Common
 """"""""""""""""""""""""""""""
@@ -19,7 +18,6 @@ source ~/.vim/conf/lang/c.vim
 source ~/.vim/conf/lang/cpp.vim
 source ~/.vim/conf/lang/make.vim
 source ~/.vim/conf/lang/scons.vim
-
 
 """"""""""""""""""""""""""""""
 " Tools
