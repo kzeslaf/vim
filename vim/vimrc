@@ -65,50 +65,17 @@ noremap <F12> :nohlsearch<CR>
 
 
 """"""""""""""""""""""""""""""
-" Language 'specializations'
+" Languages
 """"""""""""""""""""""""""""""
 
-"
-" C
-"
-autocmd FileType c
-    \ setlocal syntax=c.doxygen
-
-
-"
-" C++
-"
-autocmd BufNewFile main.cpp
-    \ 0read ~/.vim/skeletons/main.cpp |
-    \ normal Gdd1G
-
-autocmd FileType cpp
-    \ setlocal cc= |
-    \ setlocal syntax=cpp.doxygen
-
-
-"
-" Make
-"
-autocmd BufNewFile Makefile
-    \ 0read ~/.vim/skeletons/Makefile |
-    \ normal Gdd1G
-
-
-"
-" SCons
-"
-autocmd FileType scons
-    \ setlocal syntax=python
+source ~/.vim/conf/lang/c.vim
+source ~/.vim/conf/lang/cpp.vim
+source ~/.vim/conf/lang/make.vim
+source ~/.vim/conf/lang/scons.vim
 
 
 """"""""""""""""""""""""""""""
-" Plugins and External Tools
+" Tools
 """"""""""""""""""""""""""'"""
 
-"
-" Clang-Format
-"
-autocmd FileType c,cpp
-    \ map <buffer> <C-K> :py3f ~/bin/clang-format.py<cr> |
-    \ imap <buffer> <C-K> <C-O>:py3f ~/bin/clang-format.py<cr>
+source ~/.vim/conf/tools/clang-format.vim
