@@ -2,8 +2,8 @@ mkfile_path := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
 
 install:
-	ln -sfT $(mkfile_path)vim/vimfiles ~/.vim
-	ln -sf $(mkfile_path)vim/vimrc ~/.vimrc
+	ln -sfT $(mkfile_path)../vim ~/.vim
+	ln -sf $(mkfile_path)../vimrc ~/.vimrc
 
 uninstall:
 	rm -i ~/.vim

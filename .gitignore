@@ -1,8 +1,5 @@
-.idea
+vim/.netrwhist
+vim/spell
 
-vim/vimfiles/.netrwhist
-vim/vimfiles/bundle/pyflakes/ftplugin/python/pyflakes/pyflakes/*.pyc
-vim/vimfiles/spell
-
-vim/vimfiles/ftdetect/lcgraph.vim
-vim/vimfiles/syntax/lcgraph.vim
+vim/ftdetect/lcgraph.vim
+vim/syntax/lcgraph.vim
