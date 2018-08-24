@@ -107,45 +107,8 @@ autocmd FileType scons
 """"""""""""""""""""""""""'"""
 
 "
-" Additional plugin directories
-"
-set rtp-=~/.vim
-
-set rtp^=~/.vim/bundle/snipMate/after
-
-set rtp^=~/.vim/bundle/autohighlight
-set rtp^=~/.vim/bundle/groovy-indent
-set rtp^=~/.vim/bundle/linediff
-set rtp^=~/.vim/bundle/nerdcommenter
-set rtp^=~/.vim/bundle/plantuml-syntax
-set rtp^=~/.vim/bundle/pyflakes
-set rtp^=~/.vim/bundle/snipMate
-set rtp^=~/.vim/bundle/tasklist
-
-set rtp^=~/.vim
-
-
-"
 " Clang-Format
 "
 autocmd FileType c,cpp
     \ map <buffer> <C-K> :pyf ~/bin/clang-format.py<cr> |
     \ imap <buffer> <C-K> <C-O>:pyf ~/bin/clang-format.py<cr>
-
-
-"
-" pyflakes
-"
-" Change "SpellBad" style when opening any python file.
-"
-autocmd FileType python
-    \ highlight SpellBad cterm=undercurl,bold ctermbg=NONE
-
-
-""""""""""""""""""""""""""""""
-" Source local configuration
-""""""""""""""""""""""""""""""
-
-if filereadable(expand("~/.vimrc.local"))
-    source ~/.vimrc.local
-endif

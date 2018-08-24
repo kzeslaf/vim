@@ -1,6 +1,3 @@
 [submodule "vim/vimfiles/pack/kzeslaf/start/groovyindent"]
 	path = vim/vimfiles/pack/kzeslaf/start/groovyindent
 	url = https://github.com/kzeslaf/groovyindent-unix.git
-[submodule "vim/vimfiles/pack/kzeslaf/start/nerdcommenter"]
-	path = vim/vimfiles/pack/kzeslaf/start/nerdcommenter
-	url = https://github.com/kzeslaf/nerdcommenter.git
