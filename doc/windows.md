@@ -11,7 +11,8 @@
 
 | Command | Description |
 | --- | --- |
-| `Ctrl+w` `_` or `Ctrl+w` `\|` | maximize window horizontally/vertically |
+| `Ctrl+w` `_` | maximize window horizontally |
+| `Ctrl+w` `\|` | maximize window vertically |
 | `Ctrl+w` `=` | resize windows to equal size |
 
 ## Split windows
