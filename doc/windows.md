@@ -1,5 +1,7 @@
 # Windows
 
+See: `:help windows`
+
 ## Change window
 
 | Command | Description |
