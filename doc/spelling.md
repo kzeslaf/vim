@@ -1,5 +1,6 @@
 # Spelling
 
+See: `:help spell`
 
 | Command | Description |
 | --- | --- |
