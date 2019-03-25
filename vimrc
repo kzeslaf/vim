@@ -18,6 +18,7 @@ source ~/.vim/conf/lang/cpp.vim
 source ~/.vim/conf/lang/c.vim
 source ~/.vim/conf/lang/jenkinsfile.vim
 source ~/.vim/conf/lang/make.vim
+source ~/.vim/conf/lang/python.vim
 source ~/.vim/conf/lang/scons.vim
 source ~/.vim/conf/lang/sh.vim
 
