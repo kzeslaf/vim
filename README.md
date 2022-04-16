@@ -3,8 +3,11 @@
 
 ## Installation
 
-- Linux: `make install-vim`
-
+Linux:
+```
+cd scripts
+make
+```
 
 ## Docs
 
